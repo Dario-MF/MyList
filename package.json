@@ -43,5 +43,8 @@
   "bugs": {
     "url": "https://github.com/Dario-MF/MyList/issues"
   },
-  "homepage": "https://github.com/Dario-MF/MyList#readme"
+  "homepage": "https://github.com/Dario-MF/MyList#readme",
+  "dependencies": {
+    "hamburgers": "^1.1.3"
+  }
 }
