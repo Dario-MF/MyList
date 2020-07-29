@@ -1,1 +1,43 @@
 
+
+/*Variables*/
+
+/* z-index */
+$z-back    : -10;
+$z-normal  : 1;
+$z-tooltip : 10;
+$z-fixed   : 100;
+$z-modal   : 1000;
+
+/* fuentes */
+$font-family: sans-serif;
+$font-size-big: 2rem;
+$font-size-medium: 1.5rem;
+$font-size: 16px;
+
+
+
+/* Color */
+$color-fisrt : #007BDF;
+$color-second : #00CBFF;
+$color-third : #FF3C32;
+$color-accent : #FBA905;
+$color-border : #EEEEF3;
+$color-light : #F6F6F6;
+$color-text : #53575A;
+$color-text-light : #BABDBF;
+$color-body-bg : #FCFCFE;
+
+
+
+
+$max-width : 1200px;
+
+/* Mq break */
+$breakpoints: (
+    xs:480px,
+    s:600px,
+    m:720px,
+    l:1024px,
+    xl:1200px
+)

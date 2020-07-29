@@ -1,9 +1,17 @@
-# Plantilla para iniciar proyectos
-Este proyecto cuenta con la base para iniciar la construccion de una web, utilizando la estructura Webpack, sass, JavaScript y Html.
+# Proyecto MyList
+MyList es una SPA para la gestion de tareas, registrate y almacena en la nube tus tareas diarias.
 
 ## Autor
-Dario Mariño Ferrada
+- Dario Mariño Ferrada
 
+## Descripcion tecnica
+En el proyecto se usaron las tecnologias:
+- Webpack
+- Html
+- CSS: Sass/PostCss, RWD/FlexBox, ITCSS/Bem.
+- JavaScript Vanilla
+- Firebase: auth/storage
+- Host: GitHub "URL"
 
 ## Caracteristicas del proyecto
 - Compilar               => npm run build

@@ -6,13 +6,17 @@
 @import "config/variables";
 @import "config/functions";
 @import "config/mixins";
+
+// Theme 
+@import "theme/typography";
+
 // Base 
 @import "base/base";
+
 // Layout  
 @import "layout/layout";
 // Components 
 
-// Theme 
-@import "theme/typography";
+
 // Utilities 
 @import "hacks/hacks";
