@@ -1,0 +1,44 @@
+.header{
+    align-items: center;
+    background-color: $color-fourth;
+    position: fixed;
+    z-index:$z-fixed;
+    //margin-left: -100vw;
+    top: 0;
+    padding: 1rem;
+
+    &.is-active{
+        margin-left: 0;
+    }
+    
+
+}
+
+.header-logo{
+    width: 7rem;
+    height: 7rem;
+    margin: 0;
+    
+}
+
+.header-title{
+    font-size: 3rem;
+    margin: 6.5rem 0 0 0;
+    
+    color: $color-accent;
+}
+
+.header-menu {
+    margin-top: 12rem;
+}
+
+.menu-hamburguer{
+    position: fixed;
+    z-index: 101;
+    top: .5rem;
+    right: .5rem;
+    background-image: url(../../img/043-menu.png);
+    background-size: cover;
+    width: 4rem;
+    height: 4rem;
+}
