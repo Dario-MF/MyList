@@ -1,6 +1,6 @@
 const path = require('path'),
-    MiniCssExtractPlugin= require('mini-css-extract-plugin'),
-    {CleanWebpackPlugin} = require('clean-webpack-plugin'),
+    MiniCssExtractPlugin = require('mini-css-extract-plugin'),
+    { CleanWebpackPlugin } = require('clean-webpack-plugin'),
     HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -10,11 +10,11 @@ module.exports = {
         filename: '[name].[chunkhash].js'
     },
 
-    plugins:[
+    plugins: [
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin(),
         new HtmlWebpackPlugin({
-            template: './src/html/template.html',
+            template: './src/template.html',
             file: './index.html'
         })
     ],
@@ -28,7 +28,7 @@ module.exports = {
                     MiniCssExtractPlugin.loader,
                     {
                         loader: 'css-loader',
-                        options: {sourceMap: true}
+                        options: { sourceMap: true }
                     },
                     {
                         loader: 'postcss-loader',
@@ -41,14 +41,14 @@ module.exports = {
                         loader: 'sass-loader',
                         options: {
                             sourceMap: true,
-                            sassOptions: {outputStyle: 'compressed'}
-                            
-                        },   
+                            sassOptions: { outputStyle: 'compressed' }
+
+                        },
                     }
                 ]
             },
             {
-                test: /\.(png|jpe?g|gif|svg|webp)$/i,
+                test: /\.(png|jpe?g|gif|svg|webp|ico)$/i,
                 use: [
                     'file-loader?name=assets/[name].[ext]'
                 ]
@@ -67,10 +67,10 @@ module.exports = {
                 use: [
                     {
                         loader: 'html-loader',
-                        options: {minimize: true}
+                        options: { minimize: true }
                     }
                 ]
-                
+
             }
 
         ]

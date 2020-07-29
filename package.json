@@ -1,7 +1,7 @@
 {
   "name": "my-list",
   "version": "1.0.0",
-  "description": "template para proyectos con webpack",
+  "description": "SPA para getion de listas",
   "main": "app.js",
   "browserslist": [
     "last 2 version",
@@ -9,9 +9,9 @@
   ],
   "scripts": {
     "build": "webpack --mode development --watch",
-    "start:dev": "webpack-dev-server --mode development --open"
+    "start": "webpack-dev-server --mode development --open"
   },
-  "author": "Dario Mariño",
+  "author": "Dario Mariño <ferrada86@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -38,10 +38,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Dario-MF/Webpack_boilerplate.git"
+    "url": "git+https://github.com/Dario-MF/MyList.git"
   },
   "bugs": {
-    "url": "https://github.com/Dario-MF/Webpack_boilerplate/issues"
+    "url": "https://github.com/Dario-MF/MyList/issues"
   },
-  "homepage": "https://github.com/Dario-MF/Webpack_boilerplate#readme"
+  "homepage": "https://github.com/Dario-MF/MyList#readme"
 }

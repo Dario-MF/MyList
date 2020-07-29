@@ -15,12 +15,15 @@ En el proyecto se usaron las tecnologias:
 
 ## Caracteristicas del proyecto
 - Compilar               => npm run build
-- Watch Changed Files    => npm run start:dev
+- Watch Changed Files    => npm run start
 
 ## Comandos
 - Instalar Nodejs        => https://nodejs.org/es/
 - Instalar Dependencias  => npm install
 - Iniciar webpack        => npm install --save-dev webpack
+
+## atribuciones
+Iconos diseñados por "https://www.flaticon.es/autores/freepik"
 
 ## Licencia
 MIT License
