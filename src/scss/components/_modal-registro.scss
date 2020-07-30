@@ -16,8 +16,8 @@
     &.is-active{
         margin-top: 0;
     }
+    
      @include mq(m){
-         
          &.is-active{
             margin-top: 13vh;
         }
