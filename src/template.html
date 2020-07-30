@@ -25,6 +25,57 @@
 
         <p class="copyrigth">2020</p>
     </header>
+    <aside class="modal modal-registro" id="modalRegistro">
+        <img class="header-logo" src="img/logo.png" alt="logo">
+        <h3 class="header-title">MyList</h3>
+        <div class="modal-btn-close" id="registroBtnClose" title="Cerrar"></div>
+        <h3 class="modalTitle">Registrarse</h3>
+        <div class="modal-auth-social">
+            <div class="auth-social-facebook" id="authFacebook" title="Registro con Facebook"></div>
+            <div class="auth-social-google" id="authGoogle" title="Registro con Google"></div>
+            <div class="auth-social-github" id="authGitHub" title="Registro con GitHub"></div>
+        </div>
+        <form action="submit">
+            <input class="input" type="text" placeholder="Nombre" required>
+            <input class="input" type="email" placeholder="Email" required>
+            <input class="input" type="password" placeholder="Password">
+            <button class="modal-btn-submit" id="registroBtnSubmit" type="submit">Enviar</button>
+        </form>
+    </aside>
+    <aside class="modal modal-login" id="modalLogin">
+        <img class="header-logo" src="img/logo.png" alt="logo">
+        <h3 class="header-title">MyList</h3>
+        <div class="modal-btn-close" id="loginBtnClose" title="Cerrar"></div>
+        <h3 class="modalTitle">Registrarse</h3>
+        <div class="modal-auth-social">
+            <div class="auth-social-facebook" id="authFacebook" title="login con Facebook"></div>
+            <div class="auth-social-google" id="authGoogle" title="login con Google"></div>
+            <div class="auth-social-github" id="authGitHub" title="login con GitHub"></div>
+        </div>
+        <form action="submit">
+            <input class="input" type="email" placeholder="Email" required>
+            <input class="input" type="password" placeholder="Password">
+            <button class="modal-btn-submit" id="loginBtnSubmit" type="submit">Enviar</button>
+        </form>
+    </aside>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- cdn firebase -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
 </body>
 
 </html>

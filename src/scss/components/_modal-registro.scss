@@ -1,0 +1,124 @@
+.modal{
+    position: fixed;
+    z-index: $z-modal;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    margin-top: -100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: $color-body-bg;
+    transition:margin .3s ;
+    &.is-active{
+        margin-top: 0;
+    }
+}
+
+.modal-btn-close{
+    z-index: $z-modal + 1;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+    background-image: url(../../img/cerrar.png);
+    background-size: 2rem;
+    background-repeat: no-repeat;
+    background-position: center; 
+    &:hover{
+        background-color: $color-accent;
+    }
+}
+
+.modal-auth-social{
+    display: flex;
+}
+
+.auth-social-facebook{
+    width: 3rem;
+    height: 3rem;
+    margin: 1rem;
+    cursor: pointer;
+    border-radius: 25%;
+    @include widget;
+    background-image: url(../../img/facebook.png);
+    background-size: 2.5rem;
+    background-repeat: no-repeat;
+    background-position: center; 
+    &:hover{
+        box-shadow:0 4px 10px -2px rgba(39, 119, 70, 0.699);
+    }
+}
+.auth-social-google{
+    width: 3rem;
+    height: 3rem;
+    margin: 1rem;
+    cursor: pointer;
+    border-radius: 25%;
+    @include widget;
+    background-image: url(../../img/google.png);
+    background-size: 2.5rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    &:hover{
+        box-shadow:0 4px 10px -2px rgba(39, 119, 70, 0.699);
+    }
+}
+
+.auth-social-github{
+    width: 3rem;
+    height: 3rem;
+    margin: 1rem;
+    cursor: pointer;
+    border-radius: 25%;
+    @include widget;
+    background-image: url(../../img/github.png);
+    background-size: 2.5rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    &:hover{
+        box-shadow:0 4px 10px -2px rgba(39, 119, 70, 0.699);
+    }
+}
+
+.modal-registro form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input{
+    width: 90%;
+    margin: 1rem 0 0;
+    padding: .8rem;
+    border:1px solid rgba(53, 54, 53, 0.623);
+    border-radius: 5px;
+    outline:none;
+    &:hover{
+        border:1px solid rgba(57, 177, 46, 0.699);
+    }
+    &:focus{
+        border:1px solid rgba(57, 177, 46, 0.699);
+    }
+}
+
+.modal-btn-submit{
+    margin: 1rem;
+    padding: .8rem 2rem;
+    color: $color-text;
+    border: 0;
+    background-color: $color-accent;
+    transition: padding .4s;
+    outline-color: rgb(56, 121, 56);
+    cursor: pointer;
+    &:hover{
+        padding: .8rem 4rem;
+    }
+    
+}
