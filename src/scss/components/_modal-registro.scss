@@ -6,11 +6,11 @@
     width: 100vw;
     height: 100vh;
     margin-top: -100vh;
+    padding-bottom: 4rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 2rem;
     background-color: $color-body-bg;
     transition:margin .3s ;
     &.is-active{
@@ -21,10 +21,10 @@
 .modal-btn-close{
     z-index: $z-modal + 1;
     position: absolute;
-    top: 2rem;
-    right: 2rem;
-    width: 3rem;
-    height: 3rem;
+    top: 1rem;
+    right: 1rem;
+    width: 4rem;
+    height: 4rem;
     cursor: pointer;
     background-image: url(../../img/cerrar.png);
     background-size: 2rem;
@@ -86,7 +86,7 @@
     }
 }
 
-.modal-registro form{
+.modal form{
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -94,7 +94,7 @@
 }
 
 .input{
-    width: 90%;
+    width: 80%;
     margin: 1rem 0 0;
     padding: .8rem;
     border:1px solid rgba(53, 54, 53, 0.623);
