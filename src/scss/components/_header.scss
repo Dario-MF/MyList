@@ -1,4 +1,6 @@
 .header{
+    width: 50%;
+    height: 100vh;
     align-items: center;
     background-color: $color-fourth;
     position: fixed;
@@ -14,6 +16,17 @@
     &.is-active{
         margin-left: 0;
     }
+    @include mq(s){
+         width: 30%;
+    }
+    @include mq(m){
+         width: 100vw;
+         height: 13vh;
+         padding: 0 1rem;
+         margin-left: 0;
+         flex-direction: row;
+         justify-content: flex-end;
+    }
 }
 
 .header-logo{
@@ -22,7 +35,18 @@
     top: 0;
     left: 0;
     width: 5rem;
-    height: 5rem; 
+    height: 5rem;
+
+    @include mq(s){
+        top: 1rem;
+        left: 1rem;
+    } 
+    @include mq(m){
+        width: 4.5rem;
+        height: 4.5rem;
+        top: -.5rem;
+        left: .5rem;
+    }
 }
 
 .header-title{
@@ -34,15 +58,34 @@
     font-size: 2rem;
     margin: 0;  
     color: $color-accent;
+
+    @include mq(s){
+        top: 3rem;
+        left: 5rem;
+    } 
+    @include mq(m){
+        font-size: 1.8rem;
+        top: 1.3rem;
+        left: 4.5rem;
+    }
 }
 
 .header-menu {
-    margin-top: 12rem;
+    margin-top: 7rem;
     width: 100%;
-    .menu-item{
-        width: 100%;
-        
+
+    div{
+        display: flex;   
+        justify-content: center;
+        margin-bottom: 2rem;
     }
+
+    .img-user{
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+    }
+    
     .menu-item-link{
         display: block;
         width: 100%;
@@ -52,6 +95,37 @@
         &:hover{
             background-color: $color-accent;
         } 
+    }
+    @include mq(m){
+        margin-top: 0;
+        width: 0;
+        height: 100%;
+        
+        div{
+            margin: 0;
+            height: 100%;
+            width: 100%;
+            align-items: center;
+        }
+
+        .img-user{
+            width: 3rem;
+            height: 3rem;
+            margin:0 .5rem 0 2rem;
+        }
+        .menu-list{
+            display: flex;
+            flex-direction: row-reverse;
+            align-content: center;
+            
+            height: 100%;
+            
+        }
+        .menu-item-link{
+           height: 100%;
+           padding: 1.5rem 1rem;
+        }
+        
     }
 }
 
@@ -67,6 +141,14 @@
     &.is-active{
         background-color: $color-accent;
     }
+
+    @include mq(s){
+        top: 2rem;
+        right:2rem;
+    } 
+     @include mq(m){
+         display: none;
+     }
 }
 
 .copyrigth{
@@ -82,6 +164,9 @@
         background-image: url(../../img/copyright.png);
         background-size: cover;
     }
+     @include mq(m){
+         display: none;
+     }
 }
     
 

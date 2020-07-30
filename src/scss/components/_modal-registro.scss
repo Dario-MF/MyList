@@ -16,6 +16,12 @@
     &.is-active{
         margin-top: 0;
     }
+     @include mq(m){
+         
+         &.is-active{
+            margin-top: 13vh;
+        }
+     }
 }
 
 .modal-btn-close{
@@ -33,6 +39,11 @@
     &:hover{
         background-color: $color-accent;
     }
+
+    @include mq(s){
+        top: 2rem;
+        right:2rem;
+    } 
 }
 
 .modal-auth-social{
@@ -105,6 +116,10 @@
     }
     &:focus{
         border:1px solid rgba(57, 177, 46, 0.699);
+    }
+    @include mq(s){
+        width: 60%;
+        margin: 2rem 0 0;
     }
 }
 
