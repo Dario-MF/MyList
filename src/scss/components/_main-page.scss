@@ -1,0 +1,24 @@
+
+.page-principal {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column; 
+}
+
+.eslogan{
+    display: none;
+    margin: auto;
+    font-size: 2rem;
+    font-family: Helvetica;
+    color:whitesmoke;
+    @include mq(s){
+        font-size: 2.5rem;
+    }
+    @include mq(l){
+        font-size: 3rem;
+    }
+}
+
+
+

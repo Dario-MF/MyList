@@ -1,8 +1,6 @@
 /*
   This boilerplate is based in ITCSS and SMACSS
 */
-//lib
-@import "components/hamburguers";
 
 // Config
 @import "config/variables";
@@ -18,9 +16,11 @@
 // Layout  
 @import "layout/layout";
 // Components 
+@import "components/hamburguers";
 @import 'components/info.scss';
 @import 'components/header';
 @import 'components/modal-registro';
+@import 'components/main-page';
 
 
 // Utilities 

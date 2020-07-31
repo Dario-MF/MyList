@@ -7,12 +7,13 @@
     top: 0;
     padding-bottom: 1rem;
     padding-top: 0; 
-    background-color: $color-fourth;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     transition: margin-left .5s;
+    color: $color-text-light;
+    background-color: $color-fourth;
     &.is-active{
         margin-left: 0;
     }
@@ -25,10 +26,14 @@
     @include mq(m){
          width: 100vw;
          height: 13vh;
-         padding: 0 1rem;
+         padding: 0 1.5rem;
          margin-left: 0;
          flex-direction: row;
          justify-content: flex-end;
+    }
+    @include mq(l){
+        height: 15vh;
+        padding: 0 2rem;
     }
 }
 
@@ -47,8 +52,12 @@
     @include mq(m){
         width: 4.5rem;
         height: 4.5rem;
-        top: -.5rem;
-        left: .5rem;
+        top: .5rem;
+        left: 1rem;
+    }
+    @include mq(l){
+        top: .3rem;
+        left: 2rem;
     }
 }
 
@@ -60,7 +69,7 @@
     left: 4rem;
     font-size: 2rem;
     margin: 0;  
-    color: $color-accent;
+    color: $color-text-light;
 
     @include mq(s){
         top: 3rem;
@@ -68,8 +77,12 @@
     } 
     @include mq(m){
         font-size: 1.8rem;
-        top: 1.3rem;
-        left: 4.5rem;
+        top: 2.2rem;
+        left: 5rem;
+    }
+    @include mq(l){
+        top: 2rem;
+        left: 6rem;
     }
 }
 
@@ -95,6 +108,7 @@
         font-size: $font-size-medium;
         text-align: end;
         padding: 1rem 1.5rem;
+        color: $color-text-light;
         &:hover{
             background-color: $color-accent;
         } 
@@ -120,15 +134,22 @@
             display: flex;
             flex-direction: row-reverse;
             align-content: center;
-            
+            align-items: center;
             height: 100%;
             
         }
         .menu-item-link{
            height: 100%;
-           padding: 1.5rem 1rem;
+           padding: 1.5rem;
         }
         
+    }
+    @include mq(l){
+
+        .img-user{
+            width: 3.5rem;
+            height: 3.5rem;
+        }    
     }
 }
 

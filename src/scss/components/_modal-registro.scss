@@ -16,12 +16,27 @@
     &.is-active{
         margin-top: 0;
     }
-    
-     @include mq(m){
-         &.is-active{
+    @include mq(m){
+         background-color: rgba(0, 0, 0, 0.397);
+         justify-content: start;
+        &.is-active{
             margin-top: 13vh;
-        }
-     }
+        }  
+    }  
+}
+
+.modal-box{
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-body-bg;
+
+    @include mq(l){
+        width: 60%;
+    }
 }
 
 .modal-btn-close{
@@ -39,11 +54,17 @@
     &:hover{
         background-color: $color-accent;
     }
-
     @include mq(s){
         top: 2rem;
         right:2rem;
+    }
+    @include mq(m){
+        top: 1.5rem;
+        right: 7em;
     } 
+     @include mq(l){
+         right: 18rem;
+     }
 }
 
 .modal-auth-social{
@@ -64,6 +85,12 @@
     &:hover{
         box-shadow:0 4px 10px -2px rgba(39, 119, 70, 0.699);
     }
+    @include mq(m){
+        width: 2.5rem;
+        height: 2.5rem;
+        background-size: 2rem;
+        margin-bottom: 0;
+    }
 }
 .auth-social-google{
     width: 3rem;
@@ -78,6 +105,12 @@
     background-position: center;
     &:hover{
         box-shadow:0 4px 10px -2px rgba(39, 119, 70, 0.699);
+    }
+     @include mq(m){
+        width: 2.5rem;
+        height: 2.5rem;
+        background-size: 2rem;
+        margin-bottom: 0;
     }
 }
 
@@ -94,6 +127,12 @@
     background-position: center;
     &:hover{
         box-shadow:0 4px 10px -2px rgba(39, 119, 70, 0.699);
+    }
+     @include mq(m){
+        width: 2.5rem;
+        height: 2.5rem;
+        background-size: 2rem;
+        margin-bottom: 0;
     }
 }
 
@@ -121,12 +160,18 @@
         width: 60%;
         margin: 2rem 0 0;
     }
+    @include mq(m){
+        width: 50%;
+        padding: .6rem;
+        margin: 1rem 0 0;
+    }
 }
 
 .modal-btn-submit{
     margin: 1rem;
     padding: .8rem 2rem;
-    color: $color-text;
+    color: $color-text-light;
+    font-weight: bold;
     border: 0;
     background-color: $color-accent;
     transition: padding .4s;

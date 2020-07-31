@@ -8,8 +8,9 @@ body {
   margin: 0;
   font-family: $body-font;
   color: $color-text;
-  background : $color-body-bg;
- // overflow: hidden;
+  background: #01073a;  
+  background: -webkit-linear-gradient(to left, #004e92, #030a44);  
+  background: linear-gradient(to left, #004e92, #030a44);
 }
 
 ul{

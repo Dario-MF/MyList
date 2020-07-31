@@ -16,7 +16,7 @@ const showInfo = (mensaje, tiempo) => {
 
 
 }
-showInfo('✅ esto funciona', 4000);
+showInfo('👋🏼 ¡Bienvenido!', 4000);
 
 
 

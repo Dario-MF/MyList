@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel=”shortcut icon” type=”image/ico” href='img/favicon.ico' />
+    <link rel=”shortcut icon” type=”image/ico” href='./img/favicon.ico' />
     <title>MyList</title>
 </head>
 
@@ -36,34 +36,63 @@
         <p class="copyrigth">2020</p>
     </header>
     <aside class="modal modal-registro" id="modalRegistro">
-        <div class="modal-btn-close" id="registroBtnClose" title="Cerrar"></div>
-        <h3 class="modalTitle">Registrarse</h3>
-        <div class="modal-auth-social">
-            <div class="auth-social-facebook" id="authFacebook" title="Registro con Facebook"></div>
-            <div class="auth-social-google" id="authGoogle" title="Registro con Google"></div>
-            <div class="auth-social-github" id="authGitHub" title="Registro con GitHub"></div>
-        </div>
-        <div class="form">
-            <input class="input" id="regName" type="text" placeholder="Nombre" required>
-            <input class="input" id="regEmail" type="email" placeholder="Email" required>
-            <input class="input" id="regPassword" type="password" placeholder="Password" required>
-            <button class="modal-btn-submit" id="registroBtnSubmit">Enviar</button>
+        <div class="modal-box">
+            <div class="modal-btn-close" id="registroBtnClose" title="Cerrar"></div>
+            <h3 class="modalTitle">Registrarse</h3>
+            <div class="modal-auth-social">
+                <div class="auth-social-facebook" id="authFacebook" title="Registro con Facebook"></div>
+                <div class="auth-social-google" id="authGoogle" title="Registro con Google"></div>
+                <div class="auth-social-github" id="authGitHub" title="Registro con GitHub"></div>
+            </div>
+            <div class="form">
+                <input class="input" id="regName" type="text" placeholder="Nombre" required>
+                <input class="input" id="regEmail" type="email" placeholder="Email" required>
+                <input class="input" id="regPassword" type="password" placeholder="Password" required>
+                <button class="modal-btn-submit" id="registroBtnSubmit">Enviar</button>
+            </div>
         </div>
     </aside>
     <aside class="modal modal-login" id="modalLogin">
-        <div class="modal-btn-close" id="loginBtnClose" title="Cerrar"></div>
-        <h3 class="modalTitle">Identificarse</h3>
-        <div class="modal-auth-social">
-            <div class="auth-social-facebook" id="authFacebook" title="login con Facebook"></div>
-            <div class="auth-social-google" id="authGoogle" title="login con Google"></div>
-            <div class="auth-social-github" id="authGitHub" title="login con GitHub"></div>
-        </div>
-        <div class="form">
-            <input class="input" id="loginEmail" type="email" placeholder="Email" required>
-            <input class="input" id="loginPassword" type="password" placeholder="Password" required>
-            <button class="modal-btn-submit" id="loginBtnSubmit">Enviar</button>
+        <div class="modal-box">
+            <div class="modal-btn-close" id="loginBtnClose" title="Cerrar"></div>
+            <h3 class="modalTitle">Identificarse</h3>
+            <div class="modal-auth-social">
+                <div class="auth-social-facebook" id="authFacebook" title="login con Facebook"></div>
+                <div class="auth-social-google" id="authGoogle" title="login con Google"></div>
+                <div class="auth-social-github" id="authGitHub" title="login con GitHub"></div>
+            </div>
+            <div class="form">
+                <input class="input" id="loginEmail" type="email" placeholder="Email" required>
+                <input class="input" id="loginPassword" type="password" placeholder="Password" required>
+                <button class="modal-btn-submit" id="loginBtnSubmit">Enviar</button>
+            </div>
         </div>
     </aside>
+    <main class="page-principal">
+        <h1 class="eslogan">Gestiona tus tareas <br>
+            del día <br> de forma sencilla.</h1>
+
+        <article class="working-stage" id="workStage">
+
+            <div class="task-pending task">
+                <h2 class="task-title">Tareas pendientes</h2>
+                <div class="task-box" id="pendingBox">
+                    <div class="new-task" id="newTask"></div>
+                    <ul class="task-list" id="pendingList">
+                    </ul>
+                </div>
+            </div>
+
+            <div class="task-perfom task">
+                <h2 class="task-title">Tareas realizadas</h2>
+                <div class="task-box" id="performBox">
+                    <ul class="task-list" id="performList">
+                    </ul>
+                </div>
+            </div>
+        </article>
+    </main>
+
 
 
 
