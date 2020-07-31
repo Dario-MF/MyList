@@ -9,6 +9,9 @@
 </head>
 
 <body>
+    <div class="info-box" id="infoBox">
+        <p class="info-text" id="infoText"></p>
+    </div>
     <button class="header-btn hamburger hamburger--slider" type="button">
         <span class="hamburger-box">
             <span class="hamburger-inner"></span>
@@ -40,12 +43,12 @@
             <div class="auth-social-google" id="authGoogle" title="Registro con Google"></div>
             <div class="auth-social-github" id="authGitHub" title="Registro con GitHub"></div>
         </div>
-        <form action="submit">
-            <input class="input" type="text" placeholder="Nombre" required>
-            <input class="input" type="email" placeholder="Email" required>
-            <input class="input" type="password" placeholder="Password">
-            <button class="modal-btn-submit" id="registroBtnSubmit" type="submit">Enviar</button>
-        </form>
+        <div class="form">
+            <input class="input" id="regName" type="text" placeholder="Nombre" required>
+            <input class="input" id="regEmail" type="email" placeholder="Email" required>
+            <input class="input" id="regPassword" type="password" placeholder="Password" required>
+            <button class="modal-btn-submit" id="registroBtnSubmit">Enviar</button>
+        </div>
     </aside>
     <aside class="modal modal-login" id="modalLogin">
         <div class="modal-btn-close" id="loginBtnClose" title="Cerrar"></div>
@@ -55,11 +58,11 @@
             <div class="auth-social-google" id="authGoogle" title="login con Google"></div>
             <div class="auth-social-github" id="authGitHub" title="login con GitHub"></div>
         </div>
-        <form action="submit">
-            <input class="input" type="email" placeholder="Email" required>
-            <input class="input" type="password" placeholder="Password">
-            <button class="modal-btn-submit" id="loginBtnSubmit" type="submit">Enviar</button>
-        </form>
+        <div class="form">
+            <input class="input" id="loginEmail" type="email" placeholder="Email" required>
+            <input class="input" id="loginPassword" type="password" placeholder="Password" required>
+            <button class="modal-btn-submit" id="loginBtnSubmit">Enviar</button>
+        </div>
     </aside>
 
 

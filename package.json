@@ -1,7 +1,7 @@
 {
   "name": "my-list",
   "version": "1.0.0",
-  "description": "SPA para getion de listas",
+  "description": "SPA para gestion de listas",
   "main": "app.js",
   "browserslist": [
     "last 2 version",

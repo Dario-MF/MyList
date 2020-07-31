@@ -1,0 +1,17 @@
+
+.info-box{
+    z-index: $z-fixed + 10;
+    position: fixed;
+    top: 1rem;
+    right: 0;
+    margin-right: -50rem;
+    padding: .5rem 1rem;
+    border-radius: 15px;
+    color: $color-text-light;
+    background-color: rgb(43, 42, 42);
+    
+    transition: margin-right 1s;
+    .info-text{
+        margin: 0;
+    }
+}

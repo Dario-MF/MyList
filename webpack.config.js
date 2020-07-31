@@ -2,6 +2,7 @@ const path = require('path'),
     MiniCssExtractPlugin = require('mini-css-extract-plugin'),
     { CleanWebpackPlugin } = require('clean-webpack-plugin'),
     HtmlWebpackPlugin = require('html-webpack-plugin');
+const loader = require('sass-loader');
 
 module.exports = {
     entry: path.resolve(__dirname, 'src', 'app.js'),
@@ -19,7 +20,9 @@ module.exports = {
         })
     ],
     devtool: 'source-map',
+
     module: {
+
         rules: [
             {
                 test: /\.(css|scss)$/,
@@ -50,7 +53,8 @@ module.exports = {
             {
                 test: /\.(png|jpe?g|gif|svg|webp|ico)$/i,
                 use: [
-                    'file-loader?name=assets/[name].[ext]'
+                    'file-loader?name=assets/[name].[ext]',
+                    'image-webpack-loader?bypassOnDebug'
                 ]
             },
             {

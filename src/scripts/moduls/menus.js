@@ -1,57 +1,58 @@
 
+const showModal = (modal) => {
+    modal.classList.add("is-active");
+}
+
+const closeModal = (modal) => {
+    modal.classList.remove("is-active");
+}
+
+const activeMenu = () => {
+    hamburger.classList.toggle("is-active");
+    header.classList.toggle("is-active");
+}
+
 /* menu ppal */
 const hamburger = document.querySelector(".hamburger");
 const header = document.querySelector(".header");
 
-hamburger.addEventListener("click", function () {
-
-    hamburger.classList.toggle("is-active");
-    header.classList.toggle("is-active");
-});
-
-
+hamburger.addEventListener("click", activeMenu);
 
 /* modal registro */
 const btnRegistro = document.getElementById("linkRegistrarse");
 const modalRegistro = document.getElementById("modalRegistro");
 const registroBtnClose = document.getElementById("registroBtnClose");
 
-btnRegistro.addEventListener("click", function () {
-
-    if (document.querySelector("#modalLogin.is-active")) {
-        modalLogin.classList.toggle("is-active");
-        modalRegistro.classList.toggle("is-active");
-    } else {
-        modalRegistro.classList.toggle("is-active");
-    }
-    hamburger.classList.toggle("is-active");
-    header.classList.toggle("is-active");
+btnRegistro.addEventListener("click", function (e) {
+    e.preventDefault()
+    closeModal(modalLogin);
+    showModal(modalRegistro);
+    activeMenu()
 });
 
 registroBtnClose.addEventListener("click", function () {
-    modalRegistro.classList.toggle("is-active");
+    closeModal(modalRegistro)
 });
-
-
 
 /* Modal Login */
 const btnLogin = document.getElementById("linkIdentificarse");
 const modalLogin = document.getElementById("modalLogin");
 const loginBtnClose = document.getElementById("loginBtnClose");
 
-btnLogin.addEventListener("click", function () {
-
-    if (document.querySelector("#modalRegistro.is-active")) {
-        modalRegistro.classList.toggle("is-active");
-        modalLogin.classList.toggle("is-active");
-    } else {
-        modalLogin.classList.toggle("is-active");
-    }
-    hamburger.classList.toggle("is-active");
-    header.classList.toggle("is-active");
+btnLogin.addEventListener("click", function (e) {
+    e.preventDefault()
+    closeModal(modalRegistro);
+    showModal(modalLogin);
+    activeMenu()
 });
 
 loginBtnClose.addEventListener("click", function () {
-    modalLogin.classList.toggle("is-active");
+    closeModal(modalLogin)
 });
 
+
+
+
+
+
+export { showModal, closeModal, modalLogin, modalRegistro }
