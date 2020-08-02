@@ -74,22 +74,43 @@
 
         <article class="working-stage" id="workStage">
 
-            <div class="task-pending task">
-                <h2 class="task-title">Tareas pendientes</h2>
-                <div class="task-box" id="pendingBox">
-                    <div class="new-task" id="newTask"></div>
-                    <ul class="task-list" id="pendingList">
-                    </ul>
-                </div>
-            </div>
+            <section class="lists-box">
+                <header class="lists">
+                    <aside class="lists-controller">
+                        <div class="button-lists new-list"></div>
+                        <div class="button-lists delete-list"></div>
+                    </aside>
+                    <div class="lists-opcions">
+                        <ul class="lists-pendings">
+                            <li id="listUser">
+                                <div class="list-user">
+                                    <div class="box-btn-task">
+                                        <div class="new-task" id="btnNewTask"></div>
+                                    </div>
+                                    <div class="button-task urgente" id="btnUrgente"></div>
+                                    <div class="button-task importante" id="btnImportante"></div>
+                                    <div class="button-task no-importante" id="btnNoImportante"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </header>
 
-            <div class="task-perfom task">
-                <h2 class="task-title">Tareas realizadas</h2>
-                <div class="task-box" id="performBox">
-                    <ul class="task-list" id="performList">
+                <div class="task">
+                    <ul class="list-pending">
+                        <li>
+                            <div class="list-item">
+                                <h3 class="list-item-title">Titulo tarea</h3>
+                                <input class="list-item-check" type="checkbox">
+                                <div class="delete-task" id="deleteTask"></div>
+                            </div>
+
+                        </li>
                     </ul>
                 </div>
-            </div>
+            </section>
+
+
         </article>
     </main>
 
