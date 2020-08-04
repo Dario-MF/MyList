@@ -109,6 +109,22 @@
                         </ul>
                     </div>
                 </header>
+                <aside class="modal-new-task" id="modalNewTask">
+                    <div class="new-task-box">
+                        <h3 class="new-task-title">Crear nueva tarea</h3>
+                        <div class="new-task-opcions">
+                            <input class="new-task-name" type="text" placeholder="Titulo de la tarea">
+                            <select class="opcion-order" name="orden" id="order">
+                                <optgroup>
+                                    <option class="urgente" value="urgente">Urgente</option>
+                                    <option class="importante" value="importante">Importante</option>
+                                    <option class="no-importante" value="no-importante">No Importante</option>
+                                </optgroup>
+                            </select>
+                            <div class="btn-create-task" id="btnCreateTask">Crear</div>
+                        </div>
+                    </div>
+                </aside>
 
                 <main class="pending-box task">
                     <ul class="list-pending">

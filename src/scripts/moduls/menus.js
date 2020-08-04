@@ -11,9 +11,9 @@ const closeModal = (modal) => {
     modal.classList.remove("is-active");
 }
 
-const activeMenu = () => {
-    hamburger.classList.toggle("is-active");
-    header.classList.toggle("is-active");
+const activeMenu = (button, modal) => {
+    button.classList.toggle("is-active");
+    modal.classList.toggle("is-active");
 }
 
 const showInfo = (mensaje, tiempo) => {
@@ -33,7 +33,9 @@ const showInfo = (mensaje, tiempo) => {
 const hamburger = document.querySelector(".hamburger");
 const header = document.querySelector(".header");
 
-hamburger.addEventListener("click", activeMenu);
+hamburger.addEventListener("click", function () {
+    activeMenu(hamburger, header)
+});
 
 /* modal registro */
 const btnRegistro = document.getElementById("linkRegistrarse");
@@ -79,6 +81,14 @@ newListBtnClose.addEventListener("click", function () {
     closeModal(modalNewList)
 });
 
+/* Modal new task */
+const btnOpenNewTask = document.getElementById("btnNewTask");
+const modalNewTask = document.getElementById("modalNewTask");
+
+btnOpenNewTask.addEventListener("click", function () {
+    activeMenu(btnOpenNewTask, modalNewTask);
+});
+
 /* menu item auth-change */
 firebase.auth().onAuthStateChanged(user => {
     if (user) {
@@ -87,7 +97,8 @@ firebase.auth().onAuthStateChanged(user => {
         document.getElementById("linkLogOut").style.display = "block";
         document.getElementById("workStage").style.display = "flex";
         document.getElementById("eslogan").style.display = "none";
-        if (user.photoUrl) {
+        console.log(user)
+        if (user.photoURL) {
             document.getElementById('imgUser').src = user.photoURL;
 
         } else {
