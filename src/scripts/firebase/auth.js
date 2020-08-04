@@ -1,5 +1,4 @@
-import { showInfo } from '../moduls/events'
-import { closeModal, showModal, modalLogin, modalRegistro } from '../moduls/menus'
+import { showInfo, closeModal, showModal, modalLogin, modalRegistro } from '../moduls/menus'
 import avatar from '../../img/avatarLogin.png'
 
 

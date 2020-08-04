@@ -2,6 +2,7 @@ import { Autenticacion } from './auth';
 
 ;
 ((d) => {
+    const auth = new Autenticacion();
 
     /* form registro */
     d.getElementById("registroBtnSubmit").addEventListener("click", function () {
@@ -9,7 +10,7 @@ import { Autenticacion } from './auth';
         const regEmail = d.getElementById("regEmail").value;
         const regPassword = d.getElementById("regPassword").value;
 
-        const auth = new Autenticacion();
+
         auth.crearCuentaEmail(regName, regEmail, regPassword);
     });
 
@@ -18,7 +19,7 @@ import { Autenticacion } from './auth';
         const loginEmail = d.getElementById("loginEmail").value;
         const loginPassword = d.getElementById("loginPassword").value;
 
-        const auth = new Autenticacion();
+
         auth.autEmailPass(loginEmail, loginPassword);
     })
 
@@ -27,7 +28,7 @@ import { Autenticacion } from './auth';
 
     for (let element of authGoogle) {
         element.addEventListener("click", function () {
-            const auth = new Autenticacion();
+
             auth.authWithGoogle();
         })
     };
@@ -37,7 +38,7 @@ import { Autenticacion } from './auth';
 
     for (let element of authFacebook) {
         element.addEventListener("click", function () {
-            const auth = new Autenticacion();
+
             auth.authWithFacebook();
         })
     };
@@ -47,7 +48,7 @@ import { Autenticacion } from './auth';
 
     for (let element of authGithub) {
         element.addEventListener("click", function () {
-            const auth = new Autenticacion();
+
             auth.authWithGitHub();
         })
     };

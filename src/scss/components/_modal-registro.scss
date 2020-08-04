@@ -40,12 +40,11 @@
 }
 
 .modal-btn-close{
-    z-index: $z-modal + 1;
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
+    justify-self: flex-end;
+    align-self: flex-end;
     width: 4rem;
     height: 4rem;
+    margin: 1rem;
     cursor: pointer;
     background-image: url(../../img/cerrar.png);
     background-size: 2rem;
@@ -54,17 +53,6 @@
     &:hover{
         background-color: $color-accent;
     }
-    @include mq(s){
-        top: 2rem;
-        right:2rem;
-    }
-    @include mq(m){
-        top: 1.5rem;
-        right: 7em;
-    } 
-     @include mq(l){
-         right: 18rem;
-     }
 }
 
 .modal-auth-social{

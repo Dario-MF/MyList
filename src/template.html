@@ -29,6 +29,7 @@
                 </li>
                 <li class="menu-item"><a href="#" class="menu-item-link" id="linkIdentificarse">Identificarse</a></li>
                 <li class="menu-item"><a href="#" class="menu-item-link" id="linkRegistrarse">Registrarse</a></li>
+                <li class="menu-item"><a href="#" class="menu-item-link" id="linkLogOut">Desconectarse</a></li>
 
             </ul>
         </nav>
@@ -68,35 +69,67 @@
             </div>
         </div>
     </aside>
+    <aside class="modal modal-new-list" id="modalNewList">
+        <div class="modal-box new-list-box">
+            <div class="modal-btn-close" id="newListBtnClose" title="Cerrar"></div>
+            <h3 class="modalTitle title-new-list">Seleccione color para la lista</h3>
+            <div class="form">
+                <input class="color-list" id="selectColorList" type="color" value="#53be22">
+                <button class="modal-btn-submit" id="listBtnSubmit">Crear lista</button>
+            </div>
+        </div>
+
+    </aside>
     <main class="page-principal">
-        <h1 class="eslogan">Gestiona tus tareas <br>
+        <h1 class="eslogan" id="eslogan">Gestiona tus tareas <br>
             del día <br> de forma sencilla.</h1>
 
         <article class="working-stage" id="workStage">
 
-            <section class="lists-box">
+            <section class="lists-box not-starter">
                 <header class="lists">
                     <aside class="lists-controller">
-                        <div class="button-lists new-list"></div>
-                        <div class="button-lists delete-list"></div>
+                        <div class="button-lists new-list" id="btnNewList" title="Añadir nueva lista"></div>
+                        <div class="button-lists delete-list" title="Eliminar lista"></div>
                     </aside>
                     <div class="lists-opcions">
                         <ul class="lists-pendings">
                             <li id="listUser">
                                 <div class="list-user">
                                     <div class="box-btn-task">
-                                        <div class="new-task" id="btnNewTask"></div>
+                                        <div class="new-task" id="btnNewTask" title="Añadir nueva tarea"></div>
                                     </div>
-                                    <div class="button-task urgente" id="btnUrgente"></div>
-                                    <div class="button-task importante" id="btnImportante"></div>
-                                    <div class="button-task no-importante" id="btnNoImportante"></div>
+                                    <div class="button-task urgente" id="btnUrgente" title="Ordenar uregentes"></div>
+                                    <div class="button-task importante" id="btnImportante" title="Ordenar importantes">
+                                    </div>
+                                    <div class="button-task no-importante" id="btnNoImportante"
+                                        title="Ordenar no importantes"></div>
                                 </div>
                             </li>
                         </ul>
                     </div>
                 </header>
 
-                <div class="task">
+                <main class="pending-box task">
+                    <ul class="list-pending">
+                        <li>
+                            <div class="list-item">
+                                <h3 class="list-item-title">Titulo tarea</h3>
+                                <input class="list-item-check" type="checkbox" title="Finalizar">
+                                <div class="delete-task" id="deleteTask" title="Eliminar"></div>
+                            </div>
+
+                        </li>
+                    </ul>
+                </main>
+            </section>
+            <section class="lists-box in-progress">
+                <header class="lists in-progress-head">
+                    <div class="list-in-progress">
+                        <h3 class="head-title">En curso</h3>
+                    </div>
+                </header>
+                <main class="in-progress-box task">
                     <ul class="list-pending">
                         <li>
                             <div class="list-item">
@@ -104,11 +137,29 @@
                                 <input class="list-item-check" type="checkbox">
                                 <div class="delete-task" id="deleteTask"></div>
                             </div>
-
                         </li>
                     </ul>
-                </div>
+                </main>
             </section>
+            <section class="lists-box in-progress">
+                <header class="lists in-progress-head">
+                    <div class="list-in-progress">
+                        <h3 class="head-title">Hecho</h3>
+                    </div>
+                </header>
+                <main class="done-box task">
+                    <ul class="done-list">
+                        <li>
+                            <div class="list-item">
+                                <h3 class="list-item-title">Titulo tarea</h3>
+                                <input class="list-item-check" type="checkbox">
+                                <div class="delete-task" id="deleteTask"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </main>
+            </section>
+
 
 
         </article>
