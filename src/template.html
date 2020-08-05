@@ -30,10 +30,8 @@
                 <li class="menu-item"><a href="#" class="menu-item-link" id="linkIdentificarse">Identificarse</a></li>
                 <li class="menu-item"><a href="#" class="menu-item-link" id="linkRegistrarse">Registrarse</a></li>
                 <li class="menu-item"><a href="#" class="menu-item-link" id="linkLogOut">Desconectarse</a></li>
-
             </ul>
         </nav>
-
         <p class="copyrigth">2020</p>
     </header>
     <aside class="modal modal-registro" id="modalRegistro">
@@ -83,9 +81,7 @@
     <main class="page-principal">
         <h1 class="eslogan" id="eslogan">Gestiona tus tareas <br>
             del día <br> de forma sencilla.</h1>
-
         <article class="working-stage" id="workStage">
-
             <section class="lists-box not-starter">
                 <header class="lists">
                     <aside class="lists-controller">
@@ -93,9 +89,10 @@
                         <div class="button-lists delete-list" title="Eliminar lista"></div>
                     </aside>
                     <div class="lists-opcions">
-                        <ul class="lists-pendings">
+                        <ul class="lists-pendings" id="listPendings">
                             <li id="listUser">
                                 <div class="list-user">
+                                    <div class="btn-separador"></div>
                                     <div class="box-btn-task">
                                         <div class="new-task" id="btnNewTask" title="Añadir nueva tarea"></div>
                                     </div>
@@ -125,7 +122,6 @@
                         </div>
                     </div>
                 </aside>
-
                 <main class="pending-box task">
                     <ul class="list-pending">
                         <li>
@@ -186,19 +182,12 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
     <!-- cdn firebase -->
     <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+
     <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
 </body>
 
 </html>

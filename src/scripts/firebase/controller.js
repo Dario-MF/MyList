@@ -1,4 +1,7 @@
 import { Autenticacion } from './auth';
+import { showInfo } from '../moduls/menus';
+import imgUserLogout from '../../img/avatarLogout.png';
+import imgUserLogin from '../../img/avatarLogin.png';
 
 ;
 ((d) => {
@@ -52,6 +55,50 @@ import { Autenticacion } from './auth';
             auth.authWithGitHub();
         })
     };
+
+    /* menu item auth-change */
+    firebase.auth().onAuthStateChanged(user => {
+        if (user) {
+            d.getElementById("linkIdentificarse").style.display = "none";
+            d.getElementById("linkRegistrarse").style.display = "none";
+            d.getElementById("linkLogOut").style.display = "block";
+            d.getElementById("workStage").style.display = "flex";
+            d.getElementById("eslogan").style.display = "none";
+
+            if (user.photoURL) {
+                d.getElementById('imgUser').src = user.photoURL;
+
+            } else {
+                d.getElementById('imgUser').src = imgUserLogin;
+            }
+        }
+    });
+
+    /* logOut user */
+    const linkLogOut = d.getElementById("linkLogOut");
+
+    linkLogOut.addEventListener("click", function () {
+        const user = firebase.auth().currentUser;
+        if (user) {
+            return firebase.auth().signOut()
+                .then(() => {
+                    linkLogOut.style.display = "none";
+                    d.getElementById("linkIdentificarse").style.display = "block";
+                    d.getElementById("linkRegistrarse").style.display = "block";
+                    d.getElementById("workStage").style.display = "none";
+                    d.getElementById("eslogan").style.display = "block";
+
+
+
+                    d.getElementById('imgUser').src = imgUserLogout;
+
+                    showInfo('Se desconecto correctamente', 5000)
+                }).catch(error => {
+                    showInfo(`Error en la desconexion: ${error}`)
+                })
+        }
+    });
+
 
 
 

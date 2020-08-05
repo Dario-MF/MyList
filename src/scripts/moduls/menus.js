@@ -1,8 +1,6 @@
-import imgUserLogout from '../../img/avatarLogout.png';
-import imgUserLogin from '../../img/avatarLogin.png';
 
 
-
+;
 const showModal = (modal) => {
     modal.classList.add("is-active");
 }
@@ -46,7 +44,7 @@ btnRegistro.addEventListener("click", function (e) {
     e.preventDefault()
     closeModal(modalLogin);
     showModal(modalRegistro);
-    activeMenu()
+    activeMenu(hamburger, header)
 });
 
 registroBtnClose.addEventListener("click", function () {
@@ -62,7 +60,7 @@ btnLogin.addEventListener("click", function (e) {
     e.preventDefault()
     closeModal(modalRegistro);
     showModal(modalLogin);
-    activeMenu()
+    activeMenu(hamburger, header)
 });
 
 loginBtnClose.addEventListener("click", function () {
@@ -82,55 +80,38 @@ newListBtnClose.addEventListener("click", function () {
 });
 
 /* Modal new task */
-const btnOpenNewTask = document.getElementById("btnNewTask");
-const modalNewTask = document.getElementById("modalNewTask");
+const eventNewTask = (listId) => {
+    const btnOpenNewTask = document.querySelector(`#id${listId} .new-task`)
+    const modalNewTask = document.getElementById("modalNewTask");
 
-btnOpenNewTask.addEventListener("click", function () {
-    activeMenu(btnOpenNewTask, modalNewTask);
-});
+    btnOpenNewTask.addEventListener("click", function () {
+        activeMenu(btnOpenNewTask, modalNewTask);
+    })
 
-/* menu item auth-change */
-firebase.auth().onAuthStateChanged(user => {
-    if (user) {
-        document.getElementById("linkIdentificarse").style.display = "none";
-        document.getElementById("linkRegistrarse").style.display = "none";
-        document.getElementById("linkLogOut").style.display = "block";
-        document.getElementById("workStage").style.display = "flex";
-        document.getElementById("eslogan").style.display = "none";
-        console.log(user)
-        if (user.photoURL) {
-            document.getElementById('imgUser').src = user.photoURL;
+};
 
-        } else {
-            document.getElementById('imgUser').src = imgUserLogin;
-        }
+/* ordenar separadores */
+const separadorOrden = () => {
+    const separadores = document.querySelectorAll(".btn-separador");
+
+    for (let separador of separadores) {
+        let indexMarcador = 49;
+
+        separador.addEventListener("click", function (e) {
+            const listTarget = e.target.parentNode.parentNode;
+            const lists = document.querySelectorAll(".lists-pendings li");
+
+            for (let list of lists) {
+                if (list == listTarget) {
+                    list.style.zIndex = '50'
+                } else {
+                    list.style.zIndex = `${indexMarcador}`
+                    indexMarcador -= 1;
+                }
+            }
+        })
     }
-});
-
-/* logOut user */
-const linkLogOut = document.getElementById("linkLogOut");
-
-linkLogOut.addEventListener("click", function () {
-    const user = firebase.auth().currentUser;
-    if (user) {
-        return firebase.auth().signOut()
-            .then(() => {
-                linkLogOut.style.display = "none";
-                document.getElementById("linkIdentificarse").style.display = "block";
-                document.getElementById("linkRegistrarse").style.display = "block";
-                document.getElementById("workStage").style.display = "none";
-                document.getElementById("eslogan").style.display = "block";
-
-
-
-                document.getElementById('imgUser').src = imgUserLogout;
-
-                showInfo('Se desconecto correctamente', 5000)
-            }).catch(error => {
-                showInfo(`Error en la desconexion: ${error}`)
-            })
-    }
-})
+}
 
 
 
@@ -138,4 +119,7 @@ linkLogOut.addEventListener("click", function () {
 
 
 
-export { showModal, closeModal, showInfo, modalLogin, modalRegistro }
+
+
+
+export { showModal, closeModal, showInfo, eventNewTask, activeMenu, separadorOrden, modalLogin, modalRegistro }
