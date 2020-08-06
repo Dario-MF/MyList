@@ -6,8 +6,6 @@ import { Lista } from './list';
 
 const list = new Lista();
 const task = new Task();
-list.consultarLists();
-task.consultarTask();
 
 /* Crear nueva lista */
 document.getElementById("listBtnSubmit").addEventListener("click", () => {

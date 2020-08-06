@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel=”shortcut icon” type=”image/ico” href='./img/favicon.ico' />
+    <link rel="icon" href='./img/favicon.ico' type="image/x-icon">
     <title>MyList</title>
 </head>
 
@@ -24,7 +24,7 @@
             <ul class="menu-list">
                 <li class="menu-item">
                     <div>
-                        <img class="img-user" id="imgUser" url="./img/avatarLogout.png" alt="avatar">
+                        <img class="img-user" id="imgUser" src="./img/avatarLogout.png" alt="avatar">
                     </div>
                 </li>
                 <li class="menu-item"><a href="#" class="menu-item-link" id="linkIdentificarse">Identificarse</a></li>
@@ -90,21 +90,7 @@
                     </aside>
                     <div class="lists-opcions">
                         <ul class="lists-pendings" id="listPendings">
-                            <li id="listUser">
-                                <div class="list-user">
-                                    <div class="btn-separador"></div>
-                                    <div class="box-btn-task">
-                                        <div class="new-task" id="btnNewTask" title="Añadir nueva tarea"></div>
-                                    </div>
-                                    <div class="button-task btn-urgente" id="btnUrgente" title="Ordenar uregentes">
-                                    </div>
-                                    <div class="button-task btn-importante" id="btnImportante"
-                                        title="Ordenar importantes">
-                                    </div>
-                                    <div class="button-task btn-no-importante" id="btnNoImportante"
-                                        title="Ordenar no importantes"></div>
-                                </div>
-                            </li>
+
                         </ul>
                     </div>
                 </header>
@@ -126,13 +112,7 @@
                 </aside>
                 <main class="pending-box task">
                     <ul class="list-pending" id="listPending">
-                        <li>
-                            <div class="list-item">
-                                <h3 class="list-item-title">Titulo tarea</h3>
-                                <input class="list-item-check" id="itemCheck" type="checkbox" title="Finalizar">
-                                <div class="delete-task" id="deleteTask" title="Eliminar"></div>
-                            </div>
-                        </li>
+
                     </ul>
                 </main>
             </section>
@@ -144,13 +124,7 @@
                 </header>
                 <main class="done-box task">
                     <ul class="done-list" id="doneList">
-                        <li>
-                            <div class="list-item">
-                                <h3 class="list-item-title">Titulo tarea</h3>
-                                <input class="list-item-check" id="itemCheck" type="checkbox" checked title="Finalizar">
-                                <div class="delete-task" id="deleteTask" title="Eliminar"></div>
-                            </div>
-                        </li>
+
                     </ul>
                 </main>
             </section>

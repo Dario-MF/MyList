@@ -13,7 +13,7 @@ class Lista {
             color: color
         })
             .then(refDoc => {
-                console.log(`ID de la ista: ${refDoc.id}`);
+
                 showInfo(`Lista creada correctamente`, 5000);
             })
             .catch(error => {
@@ -23,30 +23,33 @@ class Lista {
     }
 
     consultarLists() {
-        this.db.collection('listas').onSnapshot(querySnapshot => {
-            const lists = document.getElementById("listPendings");
-            lists.innerHTML = '';
+        const user = firebase.auth().currentUser;
+        this.db.collection('listas')
+            .where("autor", "==", user.email)
+            .onSnapshot(querySnapshot => {
+                const lists = document.getElementById("listPendings");
+                lists.innerHTML = '';
 
-            let widthMarcador = 90.1;
-            let indexMarcador = 50
-            querySnapshot.forEach(list => {
-                let listHtml = this.listTemplate(
-                    list.data().color,
-                    list.id
-                );
-                lists.insertAdjacentHTML('afterbegin', listHtml);
+                let widthMarcador = 90.1;
+                let indexMarcador = 50
+                querySnapshot.forEach(list => {
+                    let listHtml = this.listTemplate(
+                        list.data().color,
+                        list.id
+                    );
+                    lists.insertAdjacentHTML('afterbegin', listHtml);
 
-                const marcador = document.querySelector(`#id${list.id} .btn-separador`)
-                marcador.style.right = `${widthMarcador}%`
-                document.querySelector(`#id${list.id}`).style.zIndex = `${indexMarcador}`
-                widthMarcador -= 10;
-                indexMarcador -= 1;
-                eventNewTask(list.id);
+                    const marcador = document.querySelector(`#id${list.id} .btn-separador`)
+                    marcador.style.right = `${widthMarcador}%`
+                    document.querySelector(`#id${list.id}`).style.zIndex = `${indexMarcador}`
+                    widthMarcador -= 10;
+                    indexMarcador -= 1;
+                    eventNewTask(list.id);
 
+                })
+                separadorOrden();
+                ordenarTask();
             })
-            separadorOrden();
-            ordenarTask();
-        })
     }
 
     deleteList(listId) {

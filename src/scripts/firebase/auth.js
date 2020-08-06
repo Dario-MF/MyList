@@ -1,5 +1,7 @@
 import { showInfo, closeModal, showModal, modalLogin, modalRegistro } from '../moduls/menus';
 import avatar from '../../img/avatarLogin.png';
+import { Lista } from '../users/list';
+import { Task } from '../users/task';
 
 
 
@@ -10,8 +12,13 @@ class Autenticacion {
             .then(result => {
                 if (result.user.emailVerified) {
                     document.getElementById('imgUser').src = avatar;
-                    showInfo(`Bienvenido ${result.user.displayName}`, 5000);
 
+                    const list = new Lista();
+                    const task = new Task();
+                    list.consultarLists();
+                    task.consultarTask();
+
+                    showInfo(`Bienvenido ${result.user.displayName}`, 5000);
                 } else {
                     firebase.auth().signOut();
                     showInfo(`❌ Por favor verifique su cuenta con el email`, 5000)
@@ -31,14 +38,17 @@ class Autenticacion {
                 }
                 result.user.sendEmailVerification(configuracion)
                     .catch(error => {
-                        console.error(error);
-
                         showInfo(`❌ error: ${error.message}`, 5000);
                     });
                 firebase.auth().signOut();
 
                 showInfo(`✅ ${nombre} Registro correcto!! recuerde verificarse con el email`, 5000);
                 closeModal(modalRegistro);
+
+                const list = new Lista();
+                const task = new Task();
+                list.consultarLists();
+                task.consultarTask();
             })
             .catch(error => {
                 console.error(error);
@@ -51,11 +61,16 @@ class Autenticacion {
 
         firebase.auth().signInWithPopup(provGoogle)
             .then(result => {
-                document.getElementById('imgUser').src = result.user.photoURL;
+                document.getElementById('imgUser').url = result.user.photoURL;
 
                 closeModal(modalRegistro);
                 closeModal(modalLogin);
                 showInfo(`Bienvenido ${result.user.displayName} !!`, 5000);
+
+                const list = new Lista();
+                const task = new Task();
+                list.consultarLists();
+                task.consultarTask();
             })
             .catch(error => {
                 let errorCode = error.code;
@@ -76,12 +91,17 @@ class Autenticacion {
 
         firebase.auth().signInWithPopup(provFacebook)
             .then(result => {
-                document.getElementById('imgUser').src = result.user.photoURL;
+                document.getElementById('imgUser').url = result.user.photoURL;
 
                 closeModal(modalRegistro);
                 closeModal(modalLogin);
 
                 showInfo(`Bienvenido ${result.user.displayName} !!`, 5000);
+
+                const list = new Lista();
+                const task = new Task();
+                list.consultarLists();
+                task.consultarTask();
             })
             .catch(error => {
                 let errorCode = error.code;
@@ -100,7 +120,7 @@ class Autenticacion {
 
         firebase.auth().signInWithPopup(provGithub)
             .then(result => {
-                document.getElementById('imgUser').src = result.user.photoURL;
+                document.getElementById('imgUser').url = result.user.photoURL;
                 console.log(result.user)
                 closeModal(modalRegistro);
                 closeModal(modalLogin);

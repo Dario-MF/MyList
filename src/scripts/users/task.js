@@ -22,36 +22,39 @@ class Task {
     }
 
     consultarTask() {
-        this.db.collection('tasks').onSnapshot(querySnapshot => {
-            const listPending = document.getElementById("listPending");
-            const listDone = document.getElementById("doneList");
-            listPending.innerHTML = '';
-            listDone.innerHTML = '';
+        const user = firebase.auth().currentUser;
+        this.db.collection('tasks')
+            .where("uid", "==", user.uid)
+            .onSnapshot(querySnapshot => {
+                const listPending = document.getElementById("listPending");
+                const listDone = document.getElementById("doneList");
+                listPending.innerHTML = '';
+                listDone.innerHTML = '';
 
-            querySnapshot.forEach(task => {
-                let taskHtml = this.taskTemplate(
-                    task.data().titleTask,
-                    task.data().idList,
-                    task.data().status,
-                    task.id
-                );
-                let taskHtmlChecked = this.taskTemplateCheked(
-                    task.data().titleTask,
-                    task.data().idList,
-                    task.data().status,
-                    task.id
-                );
-                console.log(task.data().finalizado)
-                if (task.data().finalizado) {
-                    listDone.insertAdjacentHTML('beforeend', taskHtmlChecked);
-                } else {
-                    listPending.insertAdjacentHTML('beforeend', taskHtml);
-                }
-                this.deleteTaskEvent()
-                this.finalizarTaskEvent()
+                querySnapshot.forEach(task => {
+                    let taskHtml = this.taskTemplate(
+                        task.data().titleTask,
+                        task.data().idList,
+                        task.data().status,
+                        task.id
+                    );
+                    let taskHtmlChecked = this.taskTemplateCheked(
+                        task.data().titleTask,
+                        task.data().idList,
+                        task.data().status,
+                        task.id
+                    );
+
+                    if (task.data().finalizado) {
+                        listDone.insertAdjacentHTML('beforeend', taskHtmlChecked);
+                    } else {
+                        listPending.insertAdjacentHTML('beforeend', taskHtml);
+                    }
+                    this.deleteTaskEvent()
+                    this.finalizarTaskEvent()
+                })
+                tasksInFocus();
             })
-            tasksInFocus();
-        })
     }
 
     updateTask(final, taskId) {
