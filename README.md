@@ -1,6 +1,8 @@
 # Proyecto MyList
 MyList es una SPA para la gestion de tareas, registrate y almacena en la nube tus tareas diarias.
 
+- Host: Firebase : https://to-do-list-84ef2.web.app/
+
 ## Autor
 - Dario Mariño Ferrada
 
@@ -47,7 +49,7 @@ En el proyecto se usaron las tecnologias:
 - CSS: Sass/PostCss, RWD/FlexBox, ITCSS/Bem.
 - JavaScript Vanilla
 - Firebase: auth/storage
-- Host: GitHub "URL"
+- Host: Firebase : https://to-do-list-84ef2.web.app/
 
 ## Caracteristicas del proyecto
 - Compilar               => npm run build
