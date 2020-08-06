@@ -24,7 +24,7 @@
             <ul class="menu-list">
                 <li class="menu-item">
                     <div>
-                        <img class="img-user" id="imgUser" src="./img/avatarLogout.png" alt="avatar">
+                        <img class="img-user" id="imgUser" url="./img/avatarLogout.png" alt="avatar">
                     </div>
                 </li>
                 <li class="menu-item"><a href="#" class="menu-item-link" id="linkIdentificarse">Identificarse</a></li>
@@ -96,10 +96,12 @@
                                     <div class="box-btn-task">
                                         <div class="new-task" id="btnNewTask" title="Añadir nueva tarea"></div>
                                     </div>
-                                    <div class="button-task urgente" id="btnUrgente" title="Ordenar uregentes"></div>
-                                    <div class="button-task importante" id="btnImportante" title="Ordenar importantes">
+                                    <div class="button-task btn-urgente" id="btnUrgente" title="Ordenar uregentes">
                                     </div>
-                                    <div class="button-task no-importante" id="btnNoImportante"
+                                    <div class="button-task btn-importante" id="btnImportante"
+                                        title="Ordenar importantes">
+                                    </div>
+                                    <div class="button-task btn-no-importante" id="btnNoImportante"
                                         title="Ordenar no importantes"></div>
                                 </div>
                             </li>
@@ -110,8 +112,8 @@
                     <div class="new-task-box">
                         <h3 class="new-task-title">Crear nueva tarea</h3>
                         <div class="new-task-opcions">
-                            <input class="new-task-name" type="text" placeholder="Titulo de la tarea">
-                            <select class="opcion-order" name="orden" id="order">
+                            <input class="new-task-name" id="newTaskName" type="text" placeholder="Titulo de la tarea">
+                            <select class="opcion-order" name="orden" id="statusTask">
                                 <optgroup>
                                     <option class="urgente" value="urgente">Urgente</option>
                                     <option class="importante" value="importante">Importante</option>
@@ -123,31 +125,12 @@
                     </div>
                 </aside>
                 <main class="pending-box task">
-                    <ul class="list-pending">
+                    <ul class="list-pending" id="listPending">
                         <li>
                             <div class="list-item">
                                 <h3 class="list-item-title">Titulo tarea</h3>
                                 <input class="list-item-check" type="checkbox" title="Finalizar">
                                 <div class="delete-task" id="deleteTask" title="Eliminar"></div>
-                            </div>
-
-                        </li>
-                    </ul>
-                </main>
-            </section>
-            <section class="lists-box in-progress">
-                <header class="lists in-progress-head">
-                    <div class="list-in-progress">
-                        <h3 class="head-title">En curso</h3>
-                    </div>
-                </header>
-                <main class="in-progress-box task">
-                    <ul class="list-pending">
-                        <li>
-                            <div class="list-item">
-                                <h3 class="list-item-title">Titulo tarea</h3>
-                                <input class="list-item-check" type="checkbox">
-                                <div class="delete-task" id="deleteTask"></div>
                             </div>
                         </li>
                     </ul>

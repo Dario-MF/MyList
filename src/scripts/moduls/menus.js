@@ -86,9 +86,34 @@ const eventNewTask = (listId) => {
 
     btnOpenNewTask.addEventListener("click", function () {
         activeMenu(btnOpenNewTask, modalNewTask);
+        document.getElementById("newTaskName").value = '';
     })
 
 };
+
+/* Obtener id List en target */
+const idListTarget = () => {
+    const lists = document.querySelectorAll(".lists-pendings li");
+    for (let list of lists) {
+        if (list.style.zIndex == 50) {
+            return list.id
+        }
+    }
+}
+
+/* Vistas de tareas */
+const tasksInFocus = () => {
+    const tasksOpen = document.querySelectorAll(`.${idListTarget()}`);
+    const tasks = document.querySelectorAll(".list-pending li");
+
+    for (let task of tasks) {
+        task.style.display = 'none';
+    }
+    for (let task of tasksOpen) {
+        task.style.display = 'block'
+    }
+
+}
 
 /* ordenar separadores */
 const separadorOrden = () => {
@@ -103,7 +128,8 @@ const separadorOrden = () => {
 
             for (let list of lists) {
                 if (list == listTarget) {
-                    list.style.zIndex = '50'
+                    list.style.zIndex = '50';
+                    tasksInFocus();
                 } else {
                     list.style.zIndex = `${indexMarcador}`
                     indexMarcador -= 1;
@@ -113,13 +139,53 @@ const separadorOrden = () => {
     }
 }
 
+/* ordenar por status */
+const ordenarStatus = (status) => {
+    const listBox = document.querySelector("#listPending");
+    const tasks = document.querySelectorAll("#listPending li");
+    const arrayTask = Array.from(tasks);
+
+    arrayTask.sort((a, b) => {
+        if (a.classList.contains(status)) {
+            return -1
+        } else {
+            return 1
+        }
+    }).forEach(task => { listBox.appendChild(task) })
+}
+
+/* Evento ordenar tareas */
+const ordenarTask = () => {
+    const btnsOrden = document.querySelectorAll(".button-task");
+
+    for (let btn of btnsOrden) {
+        btn.addEventListener("click", function (e) {
+            if (e.target.classList.contains("btn-urgente")) {
+                ordenarStatus("urgente");
+
+            } else if (e.target.classList.contains("btn-importante")) {
+                ordenarStatus("importante");
+
+            } else if (e.target.classList.contains("btn-no-importante")) {
+                ordenarStatus("no-importante");
+            }
+        });
+    }
+}
 
 
 
 
-
-
-
-
-
-export { showModal, closeModal, showInfo, eventNewTask, activeMenu, separadorOrden, modalLogin, modalRegistro }
+export {
+    showModal,
+    closeModal,
+    showInfo,
+    eventNewTask,
+    activeMenu,
+    separadorOrden,
+    tasksInFocus,
+    modalLogin,
+    modalRegistro,
+    idListTarget,
+    ordenarTask
+}

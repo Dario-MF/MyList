@@ -1,4 +1,4 @@
-import { showInfo, eventNewTask, separadorOrden } from '../moduls/menus';
+import { showInfo, eventNewTask, separadorOrden, ordenarTask } from '../moduls/menus';
 
 class List {
     constructor() {
@@ -33,7 +33,7 @@ class List {
                     list.data().color,
                     list.id
                 );
-                lists.insertAdjacentHTML('beforeend', listHtml);
+                lists.insertAdjacentHTML('afterbegin', listHtml);
 
                 const marcador = document.querySelector(`#id${list.id} .btn-separador`)
                 marcador.style.right = `${widthMarcador}%`
@@ -43,7 +43,8 @@ class List {
                 eventNewTask(list.id);
 
             })
-            separadorOrden()
+            separadorOrden();
+            ordenarTask();
         })
     }
 
@@ -54,9 +55,9 @@ class List {
                     <div class="box-btn-task">
                         <div class="new-task" title="Añadir nueva tarea"></div>
                     </div>
-                    <div class="button-task urgente" title="Ordenar uregentes"></div>
-                    <div class="button-task importante" title="Ordenar importantes"></div>
-                    <div class="button-task no-importante" title="Ordenar no importantes"></div>
+                    <div class="button-task btn-urgente" title="Ordenar uregentes"></div>
+                    <div class="button-task btn-importante" title="Ordenar importantes"></div>
+                    <div class="button-task btn-no-importante" title="Ordenar no importantes"></div>
                 </div>
             </li >`
     }

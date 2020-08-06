@@ -23,7 +23,7 @@
     flex-direction: column;
     background-color: rgba(255, 255, 255, 0.041);
     @include mq(m){
-        width: 32vw;
+        width: 48vw;
         margin-right: 1rem;
     }
    
@@ -104,8 +104,9 @@
     position: absolute;
     bottom: 99%;
     right: 90%;
-    width: 10%;
+    width: 9.9%;
     height: 30%;
+    cursor: pointer;
     clip-path: polygon(0 0, 70% 0, 100% 100%, 0% 100%);
     background-color: inherit;
     transition: height .3s;
@@ -153,22 +154,25 @@
     } 
 }
 
-.urgente{
+.btn-urgente{
     background-color: $color-important;
     margin-right: .5rem;
+    box-shadow: 0 3px 5px -2px rgba(2, 15, 51, 0.74);
     &:hover{
         background-color: rgb(218, 19, 19);
     }
 }
-.importante{
+.btn-importante{
     background-color: $color-urgent;
     margin-right: .5rem;
+    box-shadow: 0 3px 5px -2px rgba(2, 15, 51, 0.74);
     &:hover{
         background-color: rgb(238, 131, 10);
     }
 }
-.no-importante{
+.btn-no-importante{
     background-color: $color-no-urgent;
+    box-shadow: 0 3px 5px -2px rgba(2, 15, 51, 0.74);
     &:hover{
         background-color: rgb(213, 228, 5);
     }
@@ -184,12 +188,22 @@
     width: 100%;
     height: 10vh;
     margin-bottom: .5rem;
-    padding-left: 1rem;
+    padding:0 .5rem 0 1rem;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     background-color: $color-body-bg;
-    border-right: .5rem solid $color-important;
+    border-right: 1rem solid $color-important;
+
+    &.urgente{
+        border-right: 1rem solid $color-important;
+    }
+    &.importante{
+        border-right: 1rem solid $color-urgent;
+    }
+    &.no-importante{
+        border-right: 1rem solid $color-no-urgent;
+    }
 
     .list-item-title{
         flex: auto;
