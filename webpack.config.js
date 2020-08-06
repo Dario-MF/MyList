@@ -8,7 +8,9 @@ module.exports = {
     entry: path.resolve(__dirname, 'src', 'app.js'),
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].[chunkhash].js'
+        filename: '[name].[chunkhash].js',
+        library: "my-library",
+        libraryTarget: "umd"
     },
 
     plugins: [

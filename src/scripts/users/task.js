@@ -22,9 +22,8 @@ class Task {
 
     consultarTask() {
         this.db.collection('tasks').onSnapshot(querySnapshot => {
-            const tasksNew = document.getElementById("listPending");
-            console.log(tasksNew)
-            tasksNew.innerHTML = '';
+            const tasksList = document.getElementById("listPending");
+            tasksList.innerHTML = '';
 
             querySnapshot.forEach(task => {
                 let taskHtml = this.taskTemplate(
@@ -33,12 +32,28 @@ class Task {
                     task.data().status,
                     task.id
                 );
-                tasksNew.insertAdjacentHTML('beforeend', taskHtml);
+                tasksList.insertAdjacentHTML('beforeend', taskHtml);
+                this.deleteTaskEvent()
 
             })
             tasksInFocus();
         })
     }
+
+    deleteTask(taskId) {
+        this.db.collection('tasks').doc(taskId.substring(2)).delete();
+    }
+
+    deleteTaskEvent() {
+        const btnsDeleteTask = document.querySelectorAll(".delete-task");
+
+        for (let btn of btnsDeleteTask) {
+            btn.addEventListener("click", (e) => {
+                const taskId = e.target.parentNode.parentNode.id;
+                this.deleteTask(taskId);
+            })
+        }
+    };
 
     taskTemplate(titleTask, listaId, status, taskId) {
         return `<li class="${listaId} ${status}" id="id${taskId}">

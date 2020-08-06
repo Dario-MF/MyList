@@ -1,6 +1,7 @@
 import { showInfo, eventNewTask, separadorOrden, ordenarTask } from '../moduls/menus';
 
-class List {
+
+class Lista {
     constructor() {
         this.db = firebase.firestore()
     }
@@ -48,6 +49,11 @@ class List {
         })
     }
 
+    deleteList(listId) {
+        this.db.collection('listas').doc(listId.substring(2)).delete();
+        showInfo(`Lista borrada correctamente`, 5000);
+    }
+
     listTemplate(color, listaId) {
         return `<li id="id${listaId}">
                 <div class="list-user" style="background-color:${color}">
@@ -64,9 +70,4 @@ class List {
 
 }
 
-
-
-
-
-
-export { List }
+export { Lista };

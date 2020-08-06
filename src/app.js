@@ -6,5 +6,6 @@ import './scripts/moduls/events'
 import './scripts/moduls/menus';
 import './scripts/firebase/controller';
 import './scripts/users/list';
+import './scripts/users/task';
 import './scripts/users/list-controller';
 
