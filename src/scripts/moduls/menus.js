@@ -104,15 +104,18 @@ const idListTarget = () => {
 /* Vistas de tareas */
 const tasksInFocus = () => {
     const tasksOpen = document.querySelectorAll(`.${idListTarget()}`);
-    const tasks = document.querySelectorAll(".list-pending li");
+    const tasksPending = document.querySelectorAll(".list-pending li");
+    const tasksDone = document.querySelectorAll(".done-list li");
 
-    for (let task of tasks) {
+    for (let task of tasksPending) {
+        task.style.display = 'none';
+    }
+    for (let task of tasksDone) {
         task.style.display = 'none';
     }
     for (let task of tasksOpen) {
         task.style.display = 'block'
     }
-
 }
 
 /* ordenar separadores */

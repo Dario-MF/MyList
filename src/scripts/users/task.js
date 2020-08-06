@@ -10,7 +10,8 @@ class Task {
             uid: uid,
             idList: idList,
             titleTask: titleTask,
-            status: status
+            status: status,
+            finalizado: false
         })
             .then(refDoc => {
                 showInfo(`Tarea creada correctamente`, 5000);
@@ -22,8 +23,10 @@ class Task {
 
     consultarTask() {
         this.db.collection('tasks').onSnapshot(querySnapshot => {
-            const tasksList = document.getElementById("listPending");
-            tasksList.innerHTML = '';
+            const listPending = document.getElementById("listPending");
+            const listDone = document.getElementById("doneList");
+            listPending.innerHTML = '';
+            listDone.innerHTML = '';
 
             querySnapshot.forEach(task => {
                 let taskHtml = this.taskTemplate(
@@ -32,12 +35,47 @@ class Task {
                     task.data().status,
                     task.id
                 );
-                tasksList.insertAdjacentHTML('beforeend', taskHtml);
+                let taskHtmlChecked = this.taskTemplateCheked(
+                    task.data().titleTask,
+                    task.data().idList,
+                    task.data().status,
+                    task.id
+                );
+                console.log(task.data().finalizado)
+                if (task.data().finalizado) {
+                    listDone.insertAdjacentHTML('beforeend', taskHtmlChecked);
+                } else {
+                    listPending.insertAdjacentHTML('beforeend', taskHtml);
+                }
                 this.deleteTaskEvent()
-
+                this.finalizarTaskEvent()
             })
             tasksInFocus();
         })
+    }
+
+    updateTask(final, taskId) {
+        const refUser = this.db.collection('tasks').doc(taskId.substring(2))
+
+        refUser.update({
+            finalizado: final
+        })
+    }
+
+    finalizarTaskEvent() {
+        const checkItems = document.querySelectorAll(".list-item-check")
+
+        for (let item of checkItems) {
+            item.addEventListener("click", (e) => {
+
+                if (e.target.checked == true) {
+                    this.updateTask(true, e.target.parentNode.parentNode.id)
+
+                } else {
+                    this.updateTask(false, e.target.parentNode.parentNode.id)
+                }
+            })
+        }
     }
 
     deleteTask(taskId) {
@@ -64,11 +102,16 @@ class Task {
                     </div>
                 </li>`
     }
-
-
+    taskTemplateCheked(titleTask, listaId, status, taskId) {
+        return `<li class="${listaId} ${status}" id="id${taskId}">
+                    <div class="list-item ${status} finalizado">
+                        <h3 class="list-item-title">${titleTask}</h3>
+                        <input class="list-item-check" type="checkbox" checked title="Finalizar">
+                        <div class="delete-task" id="deleteTask" title="Eliminar"></div>
+                    </div>
+                </li>`
+    }
 }
-
-
 
 
 export { Task };
