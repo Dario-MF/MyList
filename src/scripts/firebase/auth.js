@@ -125,6 +125,11 @@ class Autenticacion {
                 closeModal(modalRegistro);
                 closeModal(modalLogin);
                 showInfo(`Bienvenido!!`, 5000);
+
+                const list = new Lista();
+                const task = new Task();
+                list.consultarLists();
+                task.consultarTask();
             })
             .catch(error => {
                 let errorCode = error.code;

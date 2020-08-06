@@ -66,6 +66,7 @@ import imgUserLogin from '../../img/avatarLogin.png';
             d.getElementById("eslogan").style.display = "none";
 
             if (user.photoURL) {
+
                 d.getElementById('imgUser').src = user.photoURL;
 
             } else {
