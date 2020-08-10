@@ -1,4 +1,4 @@
-import { showInfo, tasksInFocus } from '../moduls/menus';
+import { showInfo, tasksInFocus } from '../moduls/general';
 
 class Task {
     constructor() {
@@ -13,7 +13,7 @@ class Task {
             status: status,
             finalizado: false
         })
-            .then(refDoc => {
+            .then(() => {
                 showInfo(`Tarea creada correctamente`, 5000);
             })
             .catch(error => {

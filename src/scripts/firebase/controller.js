@@ -1,5 +1,7 @@
 import { Autenticacion } from './auth';
-import { showInfo } from '../moduls/menus';
+import { showInfo } from '../moduls/general';
+import { Lista } from '../users/list';
+import { Task } from '../users/task';
 import imgUserLogout from '../../img/avatarLogout.png';
 import imgUserLogin from '../../img/avatarLogin.png';
 
@@ -13,7 +15,6 @@ import imgUserLogin from '../../img/avatarLogin.png';
         const regEmail = d.getElementById("regEmail").value;
         const regPassword = d.getElementById("regPassword").value;
 
-
         auth.crearCuentaEmail(regName, regEmail, regPassword);
     });
 
@@ -21,7 +22,6 @@ import imgUserLogin from '../../img/avatarLogin.png';
     d.getElementById("loginBtnSubmit").addEventListener("click", function () {
         const loginEmail = d.getElementById("loginEmail").value;
         const loginPassword = d.getElementById("loginPassword").value;
-
 
         auth.autEmailPass(loginEmail, loginPassword);
     })
@@ -65,6 +65,11 @@ import imgUserLogin from '../../img/avatarLogin.png';
             d.getElementById("workStage").style.display = "flex";
             d.getElementById("eslogan").style.display = "none";
 
+            const list = new Lista();
+            const task = new Task();
+            list.consultarLists();
+            task.consultarTask();
+
             if (user.photoURL) {
 
                 d.getElementById('imgUser').src = user.photoURL;
@@ -89,8 +94,6 @@ import imgUserLogin from '../../img/avatarLogin.png';
                     d.getElementById("workStage").style.display = "none";
                     d.getElementById("eslogan").style.display = "block";
 
-
-
                     d.getElementById('imgUser').src = imgUserLogout;
 
                     showInfo('Se desconecto correctamente', 5000)
@@ -99,13 +102,5 @@ import imgUserLogin from '../../img/avatarLogin.png';
                 })
         }
     });
-
-
-
-
-
-
-
-
 
 })(document);

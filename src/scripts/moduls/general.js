@@ -3,16 +3,16 @@
 ;
 const showModal = (modal) => {
     modal.classList.add("is-active");
-}
+};
 
 const closeModal = (modal) => {
     modal.classList.remove("is-active");
-}
+};
 
 const activeMenu = (button, modal) => {
     button.classList.toggle("is-active");
     modal.classList.toggle("is-active");
-}
+};
 
 const showInfo = (mensaje, tiempo) => {
     const infoText = document.getElementById("infoText");
@@ -25,7 +25,7 @@ const showInfo = (mensaje, tiempo) => {
         infoBox.style.marginRight = '-50rem';
         infoText.innerText = '';
     }, tiempo);
-}
+};
 
 /* menu ppal */
 const hamburger = document.querySelector(".hamburger");
@@ -99,7 +99,7 @@ const idListTarget = () => {
             return list.id
         }
     }
-}
+};
 
 /* Vistas de tareas */
 const tasksInFocus = () => {
@@ -116,7 +116,7 @@ const tasksInFocus = () => {
     for (let task of tasksOpen) {
         task.style.display = 'block'
     }
-}
+};
 
 /* ordenar separadores */
 const separadorOrden = () => {
@@ -140,7 +140,7 @@ const separadorOrden = () => {
             }
         })
     }
-}
+};
 
 /* ordenar por status */
 const ordenarStatus = (status) => {
@@ -155,7 +155,7 @@ const ordenarStatus = (status) => {
             return 1
         }
     }).forEach(task => { listBox.appendChild(task) })
-}
+};
 
 /* Evento ordenar tareas */
 const ordenarTask = () => {
@@ -174,7 +174,7 @@ const ordenarTask = () => {
             }
         });
     }
-}
+};
 
 
 

@@ -4,7 +4,6 @@
 
 // Config
 @import "config/variables";
-@import "config/functions";
 @import "config/mixins";
 
 // Theme 
@@ -15,6 +14,7 @@
 
 // Layout  
 @import "layout/layout";
+
 // Components 
 @import "components/hamburguers";
 @import 'components/info.scss';
@@ -25,8 +25,6 @@
 @import 'components/list-in-progress';
 @import 'components/modal-new-list';
 @import 'components/modal-new-task';
-
-
 
 // Utilities 
 @import "hacks/hacks";

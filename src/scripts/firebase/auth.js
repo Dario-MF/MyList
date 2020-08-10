@@ -1,7 +1,6 @@
-import { showInfo, closeModal, showModal, modalLogin, modalRegistro } from '../moduls/menus';
+import { showInfo, closeModal, modalLogin, modalRegistro } from '../moduls/general';
 import avatar from '../../img/avatarLogin.png';
-import { Lista } from '../users/list';
-import { Task } from '../users/task';
+
 
 
 
@@ -12,12 +11,6 @@ class Autenticacion {
             .then(result => {
                 if (result.user.emailVerified) {
                     document.getElementById('imgUser').src = avatar;
-
-                    const list = new Lista();
-                    const task = new Task();
-                    list.consultarLists();
-                    task.consultarTask();
-
                     showInfo(`Bienvenido ${result.user.displayName}`, 5000);
                 } else {
                     firebase.auth().signOut();
@@ -44,11 +37,6 @@ class Autenticacion {
 
                 showInfo(`✅ ${nombre} Registro correcto!! recuerde verificarse con el email`, 5000);
                 closeModal(modalRegistro);
-
-                const list = new Lista();
-                const task = new Task();
-                list.consultarLists();
-                task.consultarTask();
             })
             .catch(error => {
                 console.error(error);
@@ -66,11 +54,6 @@ class Autenticacion {
                 closeModal(modalRegistro);
                 closeModal(modalLogin);
                 showInfo(`Bienvenido ${result.user.displayName} !!`, 5000);
-
-                const list = new Lista();
-                const task = new Task();
-                list.consultarLists();
-                task.consultarTask();
             })
             .catch(error => {
                 let errorCode = error.code;
@@ -82,8 +65,6 @@ class Autenticacion {
                     showInfo(`❌ Error al autenticarse con Github: ${errorMessage}`, 5000);
                 }
             })
-
-
     }
 
     authWithFacebook() {
@@ -97,11 +78,6 @@ class Autenticacion {
                 closeModal(modalLogin);
 
                 showInfo(`Bienvenido ${result.user.displayName} !!`, 5000);
-
-                const list = new Lista();
-                const task = new Task();
-                list.consultarLists();
-                task.consultarTask();
             })
             .catch(error => {
                 let errorCode = error.code;
@@ -125,11 +101,6 @@ class Autenticacion {
                 closeModal(modalRegistro);
                 closeModal(modalLogin);
                 showInfo(`Bienvenido!!`, 5000);
-
-                const list = new Lista();
-                const task = new Task();
-                list.consultarLists();
-                task.consultarTask();
             })
             .catch(error => {
                 let errorCode = error.code;
@@ -142,16 +113,7 @@ class Autenticacion {
                 }
             })
     }
-
-
-
 }
-
-
-
-
-
-
 
 
 export { Autenticacion };

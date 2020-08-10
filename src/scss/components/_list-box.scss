@@ -5,15 +5,15 @@
     display: none;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 20vh auto;
+    margin: 20vh auto 0;
     width: 90vw; 
     
     @include mq(s){
-         margin: 25vh auto;
+         margin: 25vh auto 0;
     } 
     @include mq(m){
         
-        margin: 20vh auto;
+        margin: 20vh auto 0;
     }  
 }
 
@@ -26,6 +26,7 @@
     background-color: rgba(255, 255, 255, 0.041);
     @include mq(m){
         width: 47%;
+        min-height: 75vh;
         margin-right: 1rem;
     }
    

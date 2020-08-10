@@ -1,4 +1,4 @@
-import { showInfo, idListTarget, closeModal, activeMenu } from '../moduls/menus';
+import { showInfo, idListTarget, closeModal, activeMenu } from '../moduls/general';
 import { Task } from './task';
 import { Lista } from './list';
 
@@ -55,7 +55,6 @@ btnDeleteList.addEventListener("click", () => {
     const tasksOfLista = document.querySelectorAll(`.${idListTarget()}`);
     for (let item of tasksOfLista) {
         task.deleteTask(item.id);
-        console.log(item.id)
     }
 });
 
